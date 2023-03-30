@@ -23,6 +23,7 @@ public class Select {
 
                 System.out.println("ID: " + id + ", Name: " + username + ", Password: " + password);
             }
+            System.out.println("\n");
 
             statement = connection.createStatement();
             resultSet = statement.executeQuery("SELECT * FROM Grade");
@@ -30,7 +31,10 @@ public class Select {
             while (resultSet.next()){
                 int id = resultSet.getInt("gradeId");
                 String className = resultSet.getString("className");
+
+                System.out.println("ID: " + id + ", Class name: " + className);
             }
+            System.out.println("\n");
 
             statement = connection.createStatement();
             resultSet = statement.executeQuery("SELECT * FROM Attendance");
@@ -40,7 +44,11 @@ public class Select {
                 int classId = resultSet.getInt("classId");
                 int userId = resultSet.getInt("userId");
                 String status = resultSet.getString("status");
+
+
+                System.out.println("ID: "+ id + ", Class id: "+ classId + ", User id: "+ userId + ", Status: " + status);
             }
+
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
